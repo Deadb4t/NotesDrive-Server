@@ -17,30 +17,21 @@
  * 
  */
 
-#include <iostream>
-#include <string>
+#include "utils-encryption.h"
 
-#include "server.h"
 
-using namespace std;
-
-void ShowWelcomeMsg();
-
-int main(int argc, char **argv) {
-    ShowWelcomeMsg();
-    Server s;
-    return 0;
-}
-
-void ShowWelcomeMsg()
+std::string UtilsEncryption::string_to_hex(const std::string& input)
 {
-    cout << "  _   _       _            _____       _           " << endl;
-    cout << " | \\ | |     | |          |  __ \\     (_)          " << endl;
-    cout << " |  \\| | ___ | |_ ___  ___| |  | |_ __ ___   _____ " << endl;
-    cout << " | . ` |/ _ \\| __/ _ \\/ __| |  | | '__| \\ \\ / / _ \\" << endl;
-    cout << " | |\\  | (_) | ||  __/\\__ \\ |__| | |  | |\\ V /  __/" << endl;
-    cout << " |_| \\_|\\___/ \\__\\___||___/_____/|_|  |_| \\_/ \\___|" << endl;
-    cout << endl;
-    cout << endl;
+    static const char* const lut = "0123456789ABCDEF";
+    size_t len = input.length();
+    
+    std::string output;
+    output.reserve(2 * len);
+    for (size_t i = 0; i < len; ++i)
+    {
+        const unsigned char c = input[i];
+        output.push_back(lut[c >> 4]);
+        output.push_back(lut[c & 15]);
+    }
+    return output;
 }
-

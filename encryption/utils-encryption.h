@@ -17,30 +17,16 @@
  * 
  */
 
-#include <iostream>
+#ifndef UTILSENCRYPTION_H
+#define UTILSENCRYPTION_H
+
 #include <string>
 
-#include "server.h"
 
-using namespace std;
-
-void ShowWelcomeMsg();
-
-int main(int argc, char **argv) {
-    ShowWelcomeMsg();
-    Server s;
-    return 0;
-}
-
-void ShowWelcomeMsg()
+class UtilsEncryption
 {
-    cout << "  _   _       _            _____       _           " << endl;
-    cout << " | \\ | |     | |          |  __ \\     (_)          " << endl;
-    cout << " |  \\| | ___ | |_ ___  ___| |  | |_ __ ___   _____ " << endl;
-    cout << " | . ` |/ _ \\| __/ _ \\/ __| |  | | '__| \\ \\ / / _ \\" << endl;
-    cout << " | |\\  | (_) | ||  __/\\__ \\ |__| | |  | |\\ V /  __/" << endl;
-    cout << " |_| \\_|\\___/ \\__\\___||___/_____/|_|  |_| \\_/ \\___|" << endl;
-    cout << endl;
-    cout << endl;
-}
+    public:
+        static std::string string_to_hex(const std::string& input);
+};
 
+#endif // UTILSENCRYPTION_H
