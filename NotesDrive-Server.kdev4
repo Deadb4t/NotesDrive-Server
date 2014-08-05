@@ -1,0 +1,4 @@
+[Project]
+Name=NotesDrive-Server
+Manager=KDevCMakeManager
+VersionControl=kdevgit
