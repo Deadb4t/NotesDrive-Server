@@ -2,7 +2,7 @@ Cmake_minimum_required(VERSION 3.0)
 
 project(notesdrive-server)
 
-add_executable(notesdrive-server clientmanager.cpp server.cpp encryption/rsa-encryption.cpp encryption/utils-encryption.cpp authentication/yubikeyauth.cpp main.cpp)
+add_executable(notesdrive-server hashing/sha3-hashing.cpp filemanager.cpp clientmanager.cpp server.cpp encryption/rsa-encryption.cpp encryption/utils-encryption.cpp authentication/yubikeyauth.cpp main.cpp)
 
 install(TARGETS notesdrive-server RUNTIME DESTINATION bin)
 

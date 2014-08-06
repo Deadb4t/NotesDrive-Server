@@ -29,6 +29,7 @@
 #include "authentication/yubikeyauth.h"
 #include "encryption/rsa-encryption.h"
 #include "encryption/utils-encryption.h"
+#include "hashing/sha3-hashing.h"
 
 using namespace std;
 
